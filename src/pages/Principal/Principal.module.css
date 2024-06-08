@@ -1,15 +1,14 @@
 /* =========== Header =========== */
 header{
     width: 100%;
-    padding: 10px 0;
+    padding: 10px 0 5px 0;
     border: solid 0 var(--gunmetal);
-    border-bottom-width: 2px;
+    border-bottom-width: 1px;
 
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    gap: 5px;
 }
 header > div{
     width: 100%;
@@ -21,6 +20,10 @@ header > div{
 
 header > div:first-child > div:last-child{
     justify-content: end;
+}
+
+header h2{
+    font-family: "Bebas Neue";
 }
 
 .iconButton{
