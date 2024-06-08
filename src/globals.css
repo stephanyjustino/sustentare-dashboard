@@ -82,9 +82,11 @@ input::placeholder{
 }
 .pagina{
     width: 95vw;
-    margin: 0 4vw;
+    height: 100vh;
+    padding: 0 4vw;
     gap: 10px;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
 }
 /* ================================================ */
