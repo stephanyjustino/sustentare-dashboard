@@ -7,8 +7,6 @@ var destaqueCalend = ""
 const estiloSelecionado = {color: "var(--gunmetal)", filter: "var(--borda-branca-icone)"}
 
 export default function SideMenu({paginaAtual}){
-    console.log(paginaAtual)
-    console.log(paginaAtual == "principal")
     switch (paginaAtual){
         case "principal":
             destaquePrinc =  estiloSelecionado

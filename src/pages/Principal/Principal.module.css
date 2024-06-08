@@ -1,8 +1,69 @@
+/* =========== Header =========== */
+header{
+    width: 100%;
+    padding: 10px 0;
+    border: solid 0 var(--gunmetal);
+    border-bottom-width: 2px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5px;
+}
+header > div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+}
+
+header > div:first-child > div:last-child{
+    justify-content: end;
+}
+
+.iconButton{
+    color: var(--gunmetal);
+    font-size: 24px;
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms ease-out;
+    filter: var(--sombra-vermelha-icone);
+}
+.iconButton *{
+    cursor: pointer;
+    font-size: inherit;
+}
+.iconButton:hover{
+    opacity: 0.75;
+}
+
+.divPeriodo, .divAtualizacao{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 5px;
+}
+.divAtualizacao{
+    color: var(--carvao);
+    align-items: center;
+}
+/* ============================== */
+
+/* ============= KPIS =========== */
 .KPIs{
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     
     gap: 50px;
 }
+/* ============================== */

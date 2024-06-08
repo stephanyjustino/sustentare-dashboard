@@ -25,7 +25,8 @@
     /* ======== SOMBRAS ======== */
     --sombra-comum: 1px 3px 3px 1px #0000008c;
     --sombra-vermelha: 0 0 10px var(--vermelho);
-    --sombra-vermelha-icone: drop-shadow(0px 0px 9px var(--vermelho));
+    --sombra-vermelha-icone: drop-shadow(0px 0px 3px var(--vermelho));
+    --sombra-interna: 0 0 13px 3px var(--preto) inset;
 
     /* ======== BORDAS ======== */
     --borda-branca-icone:
@@ -39,6 +40,7 @@
 /* ======== CONFIGURAÇÃO DE ESTILOS GERAIS ======== */
 html{
     background-color: var(--branco);
+    color: var(--gunmetal);
 }
 *{
     font-family: var(--corpo);
@@ -48,6 +50,7 @@ html{
     padding: 0;
     cursor: default;
     box-sizing: border-box;
+    transition: 500ms;
 }
 
 h1{ font-size: 2em; }
@@ -58,15 +61,30 @@ h4{ font-size: 1.15em; }
 button, a{
     cursor: pointer;
 }
+
+input{
+    background-color: var(--gunmetal);
+    color: var(--branco);
+    border: solid 1px var(--preto);
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: var(--sombra-interna);
+}
+input::placeholder{
+    color: var(--cinza);
+}
 /* ================================================ */
 
 /* ======== CONFIGURAÇÃO DE FLUXO DOS ELEMENTOS ======== */
 #root{
     display: flex;
     flex-direction: row;
-    gap: 2vw;
 }
 .pagina{
-    width: 93vw;
+    width: 95vw;
+    margin: 0 2vw;
+    gap: 25px;
+    display: flex;
+    flex-direction: column;
 }
 /* ================================================ */
