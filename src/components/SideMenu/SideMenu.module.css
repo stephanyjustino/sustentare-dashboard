@@ -1,0 +1,30 @@
+.menu{
+    height: 100vh;
+    width: 5vw;
+    background-color: var(--preto);
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.menu > ul{
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menu li *{
+    cursor: pointer;
+}
+.menu svg{
+    cursor: pointer;
+    color: var(--branco);
+    font-size: 24px;
+    transition: 500ms ease-out;
+    filter: var(--sombra-vermelha-icone);
+}
+.menu svg:hover{
+    opacity: 0.7;
+}

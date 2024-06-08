@@ -24,8 +24,22 @@
 
     /* ======== SOMBRAS ======== */
     --sombra-comum: 1px 3px 3px 1px #0000008c;
+    --sombra-vermelha: 0 0 10px var(--vermelho);
+    --sombra-vermelha-icone: drop-shadow(0px 0px 9px var(--vermelho));
+
+    /* ======== BORDAS ======== */
+    --borda-branca-icone:
+        drop-shadow( 2px  0px 0px var(--branco)) 
+        drop-shadow(-2px  0px 0px var(--branco))
+        drop-shadow( 0px  2px 0px var(--branco)) 
+        drop-shadow( 0px -2px 0px var(--branco))
+        var(--sombra-vermelha-icone);
 }
 
+/* ======== CONFIGURAÇÃO DE ESTILOS GERAIS ======== */
+html{
+    background-color: var(--branco);
+}
 *{
     font-family: var(--corpo);
     font-size: 16px;
@@ -44,3 +58,15 @@ h4{ font-size: 1.15em; }
 button, a{
     cursor: pointer;
 }
+/* ================================================ */
+
+/* ======== CONFIGURAÇÃO DE FLUXO DOS ELEMENTOS ======== */
+#root{
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+}
+.pagina{
+    width: 93vw;
+}
+/* ================================================ */
