@@ -4,19 +4,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 var destaquePrinc = ""
 var destaqueFunc = ""
 var destaqueCalend = ""
+const estiloSelecionado = {color: "var(--gunmetal)", filter: "var(--borda-branca-icone)"}
 
 export default function SideMenu({paginaAtual}){
     console.log(paginaAtual)
     console.log(paginaAtual == "principal")
     switch (paginaAtual){
         case "principal":
-            destaquePrinc = {color: "var(--gunmetal)", filter: "var(--borda-branca-icone)"}
+            destaquePrinc =  estiloSelecionado
             break
         case "funcionarios":
-            destaqueFunc = "paginaAtual"
+            destaqueFunc = estiloSelecionado
             break
         case "calendario":
-            destaqueCalend = "paginaAtual"
+            destaqueCalend = estiloSelecionado
             break
         default:
             throw new Error("Página atual do menu inválida!")
