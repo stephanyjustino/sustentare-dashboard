@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root{
+    /* ======== FONTES ======== */
+    --destaque: "Bebas Neue", sans-serif;
+    --corpo: "DM Sans", sans-serif;
+
+    /* ======== PALETA ======== */
+    --preto: #0A0908;
+    --branco: #F5FBEF;
+    --gunmetal: #22333B;
+    --carvao: #254A5B;
+    --cinza: #c9c9c99c;
+
+    /* ======== CORES DE STATUS ======== */
+    --verde: #2DD36F;
+    --amarelo: #FFCA3A;
+    --vermelho: #CC334E;
+
+    /* ======== GRADIENTES ======== */
+    --grad-verde: linear-gradient(var(--verde), #0f5c2d);
+    --grad-amarelo: linear-gradient(var(--amarelo), #8f701c);
+    --grad-vermelho: linear-gradient(var(--vermelho), #260007);
+
+    /* ======== SOMBRAS ======== */
+    --sombra-comum: 1px 3px 3px 1px #0000008c;
+}
+
+*{
+    font-family: var(--corpo);
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    box-sizing: border-box;
+}
+
+h1{ font-size: 2em; }
+h2{ font-size: 1.75em; }
+h3{ font-size: 1.5em; }
+h4{ font-size: 1.15em; }
+
+button, a{
+    cursor: pointer;
+}

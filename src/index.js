@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+import styles from "./globals.css"
 import Router from './router';
 
 import { library } from "@fortawesome/fontawesome-svg-core"
