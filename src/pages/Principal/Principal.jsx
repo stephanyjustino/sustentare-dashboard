@@ -13,7 +13,9 @@ export default function Principal(){
     // Função que renderiza as KPIs
     var [kpis, setKPIs] = useState();
     function renderizarKPIs(){
+        //Traz lista de dicionários com KPIs do back-end
         var valoresKPIs = carregarKPIs()
+        //Para cada dicionário, gera uma KPI
         var listaKPIs = valoresKPIs.map((valor) => (
             <KPI key={valor.nome} {...valor} />
         ))
@@ -78,10 +80,10 @@ export default function Principal(){
                 </header>
                 <section className={styles.KPIs}>{kpis}</section>
                 <section className={styles.graficos}>
-                    <div>
+                    <span>
                         <div className={styles.divGrafico}></div>
                         <div className={styles.divGrafico}></div>
-                    </div>
+                    </span>
                     <div className={styles.divGrafico}></div>
                 </section>
             </div>

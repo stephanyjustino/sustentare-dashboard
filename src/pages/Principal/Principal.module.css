@@ -74,8 +74,7 @@ header h2{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
-    gap: 50px;
+    gap: 10px;
 }
 /* ============================== */
 
@@ -85,9 +84,15 @@ header h2{
     flex-direction: column;
     gap: 10px;
 }
+.graficos > span{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 .divGrafico{
     width: 100%;
-    height: 200px;
+    height: 320px;
     background-color: var(--cinza);
 }
 /* ============================== */
