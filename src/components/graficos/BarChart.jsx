@@ -7,20 +7,20 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 const BarChart = () => {
   const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+    labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
     datasets: [
       {
-        label: 'Sales 2023',
-        data: [65, 59, 80, 81, 56, 55],
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
+        label: 'Entradas',
+        data: [1200, 1900, 3000, 5000, 2300, 2100, 3400, 2500, 1900, 2800, 3400, 2900],
+        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+        borderColor: 'rgba(54, 162, 235, 1)',
         borderWidth: 1,
       },
       {
-        label: 'Sales 2024',
-        data: [45, 69, 70, 91, 76, 65],
-        backgroundColor: 'rgba(153, 102, 255, 0.2)',
-        borderColor: 'rgba(153, 102, 255, 1)',
+        label: 'Saídas',
+        data: [1500, 2300, 3400, 2700, 2900, 3000, 3500, 3100, 2900, 3200, 3600, 2800],
+        backgroundColor: 'rgba(255, 99, 132, 0.6)',
+        borderColor: 'rgba(255, 99, 132, 1)',
         borderWidth: 1,
       },
     ],
@@ -34,7 +34,17 @@ const BarChart = () => {
       },
       title: {
         display: true,
-        text: 'Sales Over Months',
+        text: 'Entrada e Saída',
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          callback: function (value) {
+            return `R$${value.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+          },
+        },
       },
     },
   };
