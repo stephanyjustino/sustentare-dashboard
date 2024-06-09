@@ -8,8 +8,8 @@ import KPI from "../../components/KPI/KPI.jsx"
 import Menu from "../../components/SideMenu/SideMenu.jsx"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState } from "react"
-import LineChart from '../../components/graficos/LineChart';
-import PieChart from "../../components/graficos/PieChart"
+import LineChart from '../../components/graficos/CombinedChart';
+import PieChart from "../../components/graficos/DoughnutChart"
 import BarChart from "../../components/graficos/BarChart"
 
 
