@@ -2,6 +2,7 @@
 import styles from "./Principal.module.css"
 import carregarKPIs from "../../utils/carregarKPIs.js"
 import carregarGraficos from "../../utils/carregarGraficos.js"
+import modoDemonstracao from "../../utils/modoDemonstracao.js"
 import mudarTema from "../../utils/mudarTema.js"
 
 // Componentes
@@ -55,6 +56,17 @@ export default function Principal(){
             renderizarKPIs()
             renderizarGraficos()
 
+            // modoDemonstracao()
+            // modoDemonstracao()
+            // modoDemonstracao()
+            // modoDemonstracao()
+            // modoDemonstracao()
+            // modoDemonstracao()
+            // modoDemonstracao()
+            // modoDemonstracao()
+            // modoDemonstracao()
+            // modoDemonstracao()
+
             setTimeout(() => {
                 setLoading(<><FontAwesomeIcon icon={"clock-rotate-left"}/><p>Atualizado agora</p></>)
             }, 3000)
@@ -74,7 +86,7 @@ export default function Principal(){
         atualizarDados()
         const intervalo = setInterval(() => {
             atualizarDados()
-        }, 60000);
+        }, 10000);
         return () => clearInterval(intervalo)
     }, [loading])
 

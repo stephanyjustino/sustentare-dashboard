@@ -24,12 +24,7 @@ const BarChart = ({dados}) => {
     },
     scales: {
       y: {
-        beginAtZero: true,
-        ticks: {
-          callback: function (value) {
-            return `R$${value.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
-          },
-        },
+        beginAtZero: true
       },
     },
   };
