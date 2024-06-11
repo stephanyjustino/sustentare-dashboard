@@ -1,9 +1,8 @@
 .KPI{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: start;
-    gap: 12px;
 
     width: 280px;
     padding: 10px 10px;
@@ -11,16 +10,32 @@
     box-shadow: var(--sombra-comum)
 }
 
+.KPI > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.KPI > div:last-child{
+    flex-direction: column;
+    align-items: start;
+}
+
 .KPI span{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     gap: 5px;
 }
 
 .KPI span > *, .KPI h4{
     font-weight: 600;
+}
+
+.KPI h3{
+    font-size: 18px;
 }
 
 .KPI svg{

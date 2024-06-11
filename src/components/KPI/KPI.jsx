@@ -32,13 +32,15 @@ export default function KPI(props) {
         <div className={styles.KPI} style={urgencias[urgencia]}>
             <div>
                 <p>{tipo}</p>
+                <Icon nomeIcone={iconesUrgencias[urgencia]}/>
+            </div>
+            <div>
                 <span>
                     <h2>{descrValor}</h2>
                     <h3>{valor}</h3>
                 </span>
                 <p>{nome}</p>
             </div>
-            <Icon nomeIcone={iconesUrgencias[urgencia]}/>
         </div>
     </>)
 }
