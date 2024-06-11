@@ -1,6 +1,10 @@
 import Pilha from "./pilha"
 import KPI from "./KPI"
-import api from "./api";
+import axios from "axios"
+
+const api = axios.create({
+    baseURL: "http://localhost:8080/kpis/"
+})
 
 const endpoints = ["itemMaisAntigo", "ultimaAdicao", "maiorRetirada", "itemMaisAntigo"]
 
@@ -67,8 +71,6 @@ async function kpiMaiorRetirada(){
 async function kpiVencimento(){
     const res = await api.get(endpoints[3])
     let dados = res.data
-
-    console.log(dados)
 
     let prodVencimentoRecente = {
         nome: "",

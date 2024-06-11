@@ -1,6 +1,7 @@
 // Recursos
 import styles from "./Principal.module.css"
 import carregarKPIs from "../../utils/carregarKPIs.js"
+import carregarGraficos from "../../utils/carregarGraficos.js"
 import mudarTema from "../../utils/mudarTema.js"
 
 // Componentes
@@ -17,7 +18,6 @@ export default function Principal(){
     // Função que renderiza as KPIs
     var [kpis, setKPIs] = useState();
     function renderizarKPIs(){
-
         //Traz lista de dicionários com KPIs do back-end
         carregarKPIs().then((valoresKPIs) => {
             //Para cada dicionário, gera uma KPI
@@ -31,11 +31,21 @@ export default function Principal(){
 
     }
 
+    var [graficoCols, setGraficoCols] = useState()
+    function renderizarGraficos(){
+        carregarGraficos().then((dictDadosGraficos) => {
+            setGraficoCols(
+                <BarChart dados={dictDadosGraficos["grafico_colunas"]} />
+            )
+        })
+    }
+
     // Função que atualiza os dados das KPIs e demonstra isso visualmente
     var [loading, setLoading] = useState();
     function atualizarDados(){
         setLoading(<><FontAwesomeIcon icon={"spinner"} className={styles.animarCarregamento}/><p>Buscando dados...</p></>)
             renderizarKPIs()
+            renderizarGraficos()
 
             setTimeout(() => {
                 setLoading(<><FontAwesomeIcon icon={"clock-rotate-left"}/><p>Atualizado agora</p></>)
@@ -94,7 +104,7 @@ export default function Principal(){
                         </div>
                     </span>
                     <div className={styles.divGrafico}>
-                    <BarChart />
+                        {graficoCols}
                     </div>
                 </section>
             </div>
