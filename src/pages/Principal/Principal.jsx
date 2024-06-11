@@ -8,6 +8,10 @@ import KPI from "../../components/KPI/KPI.jsx"
 import Menu from "../../components/SideMenu/SideMenu.jsx"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState } from "react"
+import LineChart from '../../components/graficos/CombinedChart';
+import PieChart from "../../components/graficos/DoughnutChart"
+import BarChart from "../../components/graficos/BarChart"
+
 
 export default function Principal(){
     // Função que renderiza as KPIs
@@ -82,10 +86,16 @@ export default function Principal(){
                 <section className={styles.KPIs}>{kpis}</section>
                 <section className={styles.graficos}>
                     <span>
-                        <div className={styles.divGrafico}></div>
-                        <div className={styles.divGrafico}></div>
+                        <div className={styles.divGrafico}>
+                        <LineChart />
+                        </div>
+                        <div className={styles.divGrafico}>
+                        <PieChart />
+                        </div>
                     </span>
-                    <div className={styles.divGrafico}></div>
+                    <div className={styles.divGrafico}>
+                    <BarChart />
+                    </div>
                 </section>
             </div>
         </>
