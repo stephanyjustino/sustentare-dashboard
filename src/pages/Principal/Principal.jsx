@@ -13,13 +13,18 @@ export default function Principal(){
     // Função que renderiza as KPIs
     var [kpis, setKPIs] = useState();
     function renderizarKPIs(){
+
         //Traz lista de dicionários com KPIs do back-end
-        var valoresKPIs = carregarKPIs()
-        //Para cada dicionário, gera uma KPI
-        var listaKPIs = valoresKPIs.map((valor) => (
-            <KPI key={valor.nome} {...valor} />
-        ))
-        setKPIs(listaKPIs)
+        carregarKPIs().then((valoresKPIs) => {
+            //Para cada dicionário, gera uma KPI
+            if (valoresKPIs != undefined && valoresKPIs != null){
+                var listaKPIs = valoresKPIs.map((valor) => (
+                    <KPI key={valor.nome} {...valor} />
+                ))
+                setKPIs(listaKPIs)
+            }
+        })
+
     }
 
     // Função que atualiza os dados das KPIs e demonstra isso visualmente
@@ -42,10 +47,6 @@ export default function Principal(){
     inicioMes.setDate(1)
     inicioMes = inicioMes.toISOString().substring(0, 10)
 
-    // Executa a atualização dos dados inicial depois do carregamento da página
-    useEffect(() => {
-        atualizarDados()
-    }, [])
     // Define o intervalo para atualização dos dados
     useState(() => {
         atualizarDados()
