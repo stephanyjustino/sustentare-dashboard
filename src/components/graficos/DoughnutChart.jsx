@@ -5,12 +5,12 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 // Registrar os componentes do Chart.js
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const DoughnutChart = () => {
+const DoughnutChart = ({dados}) => {
   const data = {
-    labels: ['Carne', 'Leite', 'Queijo', 'Feijão', 'Alface'],
+    labels: dados["labels"],
     datasets: [
       {
-        label: 'Próximos a vencer nessa semana',
+        label: 'Vencidos nessa semana',
         data: [36, 24, 20, 13.6, 6.4],
         backgroundColor: [
           'rgba(54, 162, 235, 0.6)', // Azul

@@ -39,13 +39,31 @@ async function graficoColunasInOut(){
         }
         
     }
-    console.log(dados)
+    return datasets
+}
+
+
+async function graficoRosquinhaVencidos(){
+    const res = await api.get(endpoints[1])
+    let dados = res.data
+
+    var datasets = {
+        labels: [],
+        data: []
+    }
+
+    for(let i in dados){
+        datasets["labels"].push(dados[i]["nome"])
+        datasets.data.push(dados[i]["vencidos"])
+    }
+
     return datasets
 }
 
 export default async function carregarGraficos(){
     var dictDadosGraficos = {
-        "grafico_colunas": await graficoColunasInOut()
+        "grafico_colunas": await graficoColunasInOut(),
+        "grafico_rosquinha": await graficoRosquinhaVencidos()
     }
     return dictDadosGraficos
 }

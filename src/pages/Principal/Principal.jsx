@@ -10,7 +10,7 @@ import Menu from "../../components/SideMenu/SideMenu.jsx"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState } from "react"
 import LineChart from '../../components/graficos/CombinedChart';
-import PieChart from "../../components/graficos/DoughnutChart"
+import DoughnutChart from "../../components/graficos/DoughnutChart"
 import BarChart from "../../components/graficos/BarChart"
 
 
@@ -32,10 +32,18 @@ export default function Principal(){
     }
 
     var [graficoCols, setGraficoCols] = useState()
+    var [graficoRosquinha, setGraficoRosc] = useState()
     function renderizarGraficos(){
         carregarGraficos().then((dictDadosGraficos) => {
             setGraficoCols(
-                <BarChart dados={dictDadosGraficos["grafico_colunas"]} />
+                <BarChart 
+                    dados={dictDadosGraficos["grafico_colunas"]} 
+                />
+            )
+            setGraficoRosc(
+                <DoughnutChart
+                    dados={dictDadosGraficos["grafico_rosquinha"]} 
+                />
             )
         })
     }
@@ -97,15 +105,12 @@ export default function Principal(){
                 <section className={styles.graficos}>
                     <span>
                         <div className={styles.divGrafico}>
-                        <LineChart />
+                            {graficoCols}
                         </div>
                         <div className={styles.divGrafico}>
-                        <PieChart />
+                            {graficoRosquinha}
                         </div>
                     </span>
-                    <div className={styles.divGrafico}>
-                        {graficoCols}
-                    </div>
                 </section>
             </div>
         </>
