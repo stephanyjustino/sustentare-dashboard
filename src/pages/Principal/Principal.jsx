@@ -90,6 +90,22 @@ export default function Principal(){
         return () => clearInterval(intervalo)
     }, [loading])
 
+    // TODO Melhorar
+    
+    var escuro = false;
+    function temaEscuro(){
+        mudarTema()
+        if(!escuro){
+            document.getElementById("grafico1").style = "background-color: white"
+            document.getElementById("grafico2").style = "background-color: white"
+            escuro = true
+        } else {
+            document.getElementById("grafico1").style = "background-color: var(--cinza)"
+            document.getElementById("grafico2").style = "background-color: var(--cinza)"
+            escuro = false
+        }
+    }
+
     return (
         <>
             <Menu paginaAtual="principal" />
@@ -99,7 +115,7 @@ export default function Principal(){
                         <h2>Painel analítico de estoque</h2>
                         <div>
                             <button className={styles.iconButton}>
-                                <FontAwesomeIcon icon={"moon"} onClick={mudarTema}/>
+                                <FontAwesomeIcon icon={"moon"} onClick={temaEscuro}/>
                             </button>
                         </div>
                     </div>
@@ -116,10 +132,10 @@ export default function Principal(){
                 <section className={styles.KPIs}>{kpis}</section>
                 <section className={styles.graficos}>
                     <span>
-                        <div className={styles.divGrafico}>
+                        <div className={styles.divGrafico} id="grafico1">
                             {graficoCols}
                         </div>
-                        <div className={styles.divGrafico}>
+                        <div className={styles.divGrafico} id="grafico2">
                             {graficoRosquinha}
                         </div>
                     </span>
