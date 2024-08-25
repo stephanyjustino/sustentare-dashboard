@@ -7,6 +7,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    border-right: 1px solid var(--branco);
     box-shadow: 0 0 8px var(--vermelho);
     border-radius: 0px;
 }
