@@ -1,92 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
-:root{
-    /* ======== FONTES ======== */
-    --destaque: "Bebas Neue", sans-serif;
-    --corpo: "DM Sans", sans-serif;
+/*
+O :root define variáveis em CSS. As usamos para mudar um valor em todo o site
+alterando-o apenas aqui, assim como com as variáveis do Figma!!!
+*/
+:root {
+    /* Fontes */
+    --fonte-artistica: UnifrakturCook, Georgia, serif;
+    --fonte-destaque: "Bebas Neue", Tahoma, sans-serif;
+    --fonte-corpo: "DM Sans", Tahoma, sans-serif;
 
-    /* ======== PALETA ======== */
+    /* Paleta de cores */
+    --white: #F5FBEF;
     --preto: #0A0908;
-    --branco: #F5FBEF;
     --gunmetal: #22333B;
     --carvao: #254A5B;
-    --cinza: #c9c9c99c;
-
-    /* ======== CORES DE STATUS ======== */
-    --verde: #2DD36F;
-    --amarelo: #FFCA3A;
+    --cinza-transparente: #C9C9C9;
     --vermelho: #CC334E;
+    --azul-claro: #65B5DA;
+    --green:#2DD36F;
+    --yellow: #FFCA3A;
+    --orange:#EE6123;
+    --gradiente: linear-gradient(
+        to right,
+        var(--gunmetal),
+        var(--carvao),
+        var(--gunmetal)
+    );
 
-    /* ======== GRADIENTES ======== */
-    --grad-verde: linear-gradient(var(--verde), #0f5c2d);
-    --grad-amarelo: linear-gradient(var(--amarelo), #8f701c);
-    --grad-vermelho: linear-gradient(var(--vermelho), #260007);
+    /* Bordas */
+    --borda-branca:  1px solid var(--white);
+    --borda-grossa-branca:  2px solid var(--white);
+    --borda-fina-branca: 0.5px 8px solid var(--white);
 
-    /* ======== SOMBRAS ======== */
-    --sombra-comum: 1px 3px 3px 1px #0000008c;
-    --sombra-vermelha: 0 0 10px var(--vermelho);
+    /*  Sombras */
+    /* IN = Interna; EX = Com espaçamento adicional, para acomodar bordas*/
+    --sombra-branca: 3px 3px 1px 2px var(--white);
+    --sombra-vermelha: 0 0 5px var(--vermelho);
+    --sombra-in-escura: 0 0 15px 3px var(--preto) inset;
+    --sombra-in-clara: 1px 1px 10px 3px var(--azul-claro) inset;
+    --sombra-ex-vermelha: 3px 3px 3px 1px var(--vermelho);
     --sombra-vermelha-icone: drop-shadow(0px 0px 3px var(--vermelho));
-    --sombra-interna: 0 0 13px 3px var(--preto) inset;
-
-    /* ======== BORDAS ======== */
-    --borda-branca-icone:
-        drop-shadow( 2px  0px 0px var(--branco)) 
-        drop-shadow(-2px  0px 0px var(--branco))
-        drop-shadow( 0px  2px 0px var(--branco)) 
-        drop-shadow( 0px -2px 0px var(--branco))
-        var(--sombra-vermelha-icone);
 }
 
-/* ======== CONFIGURAÇÃO DE ESTILOS GERAIS ======== */
-html{
-    background-color: var(--branco);
-    color: var(--gunmetal);
-}
-*{
-    font-family: var(--corpo);
-    font-size: 16px;
-    font-weight: 500;
+/**
+* Apesar da body conter todo o conteúdo do site normalmente, no caso do REACT é utilzado a div com id Root.
+*    (Nesse caso #desktopRoot) então devemos estilizar a #desktopRoot e manter a body apenas por boa prática. 
+**/
+
+body{
+    display: block;
     margin: 0;
     padding: 0;
-    cursor: default;
-    box-sizing: border-box;
-    transition: 500ms;
-}
-
-h1{ font-size: 2em; }
-h2{ font-size: 1.75em; }
-h3{ font-size: 1.5em; }
-h4{ font-size: 1.15em; }
-
-button, a{
-    cursor: pointer;
-}
-
-input{
-    background-color: var(--gunmetal);
-    color: var(--branco);
-    border: solid 1px var(--preto);
-    border-radius: 8px;
-    padding: 8px;
-    box-shadow: var(--sombra-interna);
-}
-input::placeholder{
-    color: var(--cinza);
-}
-/* ================================================ */
-
-/* ======== CONFIGURAÇÃO DE FLUXO DOS ELEMENTOS ======== */
-#root{
-    display: flex;
-    flex-direction: row;
-}
-.pagina{
-    width: 95vw;
     height: 100vh;
-    padding: 0 4vw;
-    gap: 10px;
+    width: 100vw;
+}
+
+#desktopRoot{
+    height: 100vh;
+    width: 100vw;
+    outline: 2px solid white;
+    background: var(--gradiente);
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    align-items: center;
 }
-/* ================================================ */
+
+*{
+    color: var(--white);
+    font-family: var(--fonte-corpo);
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    box-sizing: border-box;
+    /*
+    O "em" representa n vezes o font-size base (definido acima)
+    É usado para caso desejemos aumentar o tamanho da fonte, mudamos
+    só o base e todo o resto do site é mudado junto.
+
+    Tamanhos em "em":
+    • 12px: 0.6em
+    • 18px: 1em
+    • 24px: 1.3em
+    • 32px: 1.7em
+    • 48px: 2.6
+    */
+}
+
+h1{
+    font-size: 2.6em;
+    font-family: var(--fonte-artistica)
+}
+h2{
+    font-size: 1.7em;
+    margin: 0;
+}
+h4{
+    font-size: 1.3em;
+    margin: 0;
+}
+path{
+    color: var(--white);
+}   

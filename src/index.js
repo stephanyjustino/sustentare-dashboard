@@ -1,21 +1,10 @@
+import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+const root = ReactDOM.createRoot(document.getElementById('desktopRoot'));
 
-import styles from "./globals.css"
-import Router from './router';
-
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { fas } from "@fortawesome/free-solid-svg-icons"
-import { fab } from "@fortawesome/free-brands-svg-icons"
-library.add(fas, fab)
-
-export default function App(){
-  return (
+root.render(
     <React.StrictMode>
-      <Router />
+        <App />
     </React.StrictMode>
-  );
-}
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />)
+);
