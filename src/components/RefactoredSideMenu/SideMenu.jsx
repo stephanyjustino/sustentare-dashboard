@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './SideMenu.module.css';
 
-export default function RefactoredSideMenu({ iconHome, iconEmployees, exit }) {
+export default function RefactoredSideMenu({ iconHome, iconEmployees, exit}) {
   return (
     <div className={styles.SideMenu}>
       <div className={styles.group}>
