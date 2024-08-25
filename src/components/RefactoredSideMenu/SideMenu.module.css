@@ -1,4 +1,4 @@
-.SideMenu{
+.SideMenu {
     width: 74px;
     height: 720px;
     background-color: var(--gunmetal);
@@ -10,6 +10,7 @@
     box-shadow: 0 0 8px var(--vermelho);
     border-radius: 0px;
 }
+
 .group {
     margin-top: 260px;
     height: 18%;
@@ -18,6 +19,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .icon {
     width: 30px;
     height: 30px;
