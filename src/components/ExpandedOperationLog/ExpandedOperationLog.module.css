@@ -1,0 +1,30 @@
+.ExpandedOperationLog{
+    width: 671px;
+    height: 53px;
+    background-color: var(--gunmetal);
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    font-family: var(--corpo);
+    color: var(--branco);  
+}
+.ExpandedOperationLog .icon{    
+    width: 24px;
+    height: 24px;
+    color: var(--branco) !important;
+}
+.name{
+    font-size: 24px;
+}
+.ExpandedOperationLog img{
+    width: 40px;
+    height: 40px;
+    border-radius:100%;
+}
+
+ .group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
