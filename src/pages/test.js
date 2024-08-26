@@ -8,7 +8,7 @@ const ItemDoMenu = () => {
 
     return (
         <div>
-            <Log imageAddress={"https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=600"} descImage={"Imagem do usuário"} name={"Carol"} iconInput={"memo-circle-info"} valueInput={"Entrada: 25 Kg de carne"} iconTime={"clock-rotate-left"} valueTime={"Um mês atrás"} />
+            <Log imageAddress={"https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=600"} descImage={"Imagem do usuário"} name={"Carol"} iconInput={"circle-check"} valueInput={"Entrada: 25 Kg de carne"} iconTime={"clock-rotate-left"} valueTime={"Um mês atrás"} />
         </div>
     );
 
