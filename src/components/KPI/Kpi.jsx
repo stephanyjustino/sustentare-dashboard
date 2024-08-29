@@ -1,13 +1,13 @@
 import stylesKpi from './kpi.module.css';
 
-function createKpi({
+function CreateKpi({
   onClick = null,
-  name = null,
-  value = null,
-  unit = null,
-  status = null,
+  name = "Nome do KPI",
+  value = "215",
+  unit = "Kg",
+  status = "medio",
   icon = null,
-  optionalDescrition = null
+  optionalDescrition = "Valor: R$ 523,00"
 }) {
   return (
     <div className={`${stylesKpi.kpi} ${stylesKpi[status]}`} onClick={onClick}>
@@ -16,14 +16,14 @@ function createKpi({
           {icon && <img src={icon} alt="" />}
         </div>
         <div className={stylesKpi.kpiValue}>
-          {value && <h1>{value}</h1>}
-          {unit && <h3>{unit}</h3>}
+          {value && <span id={stylesKpi.spanKpiValueH1}>{value}</span>}
+          {unit && <span id={stylesKpi.spanKpiValueH3}>{unit}</span>}
         </div>
         <div className={stylesKpi.kpiContainerDiv}></div>
       </div>
         <div className={stylesKpi.kpiDescription}>
-          {name && <p>{name}</p>}
-          {optionalDescrition && <b>{optionalDescrition}</b>}
+          {name && <span id={stylesKpi.spanP}>{name}</span>}
+          {optionalDescrition && <span id={stylesKpi.spanBold}>{optionalDescrition}</span>}
         </div>
     </div>
   );
