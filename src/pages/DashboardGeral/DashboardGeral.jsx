@@ -80,6 +80,7 @@ const Dashboard = () => {
                     <Kpi status="bom"/>
                     <Kpi />
                     <Kpi status="ruim"/>
+                    <Kpi status="bom"/>
                     
                 </div>
             </div>

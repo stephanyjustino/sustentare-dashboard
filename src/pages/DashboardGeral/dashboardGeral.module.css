@@ -1,6 +1,7 @@
 .group{
     display: flex;
     flex-direction: row;
+    height: 100%;
 }
 .titulo{
     font-size: 1.4em;
@@ -8,6 +9,7 @@
 .Global{
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 .NavTop{
     display: flex;
@@ -31,7 +33,7 @@
     justify-content: space-between;
     align-items: center;
     width: 980px;
-    height: 295px;
+    height: 55%;
 }
 
 .SideMenu{
@@ -39,6 +41,7 @@
     flex-direction: column;
     align-items: center;
     width: 20vw;
+    height: 100%;
 }
 .icons{
     display: flex;
@@ -51,8 +54,8 @@
 .DivKpis{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 62%;
+    height: 90%;
 }

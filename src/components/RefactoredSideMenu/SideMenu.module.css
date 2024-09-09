@@ -1,6 +1,6 @@
 .SideMenu {
     width: 64px;
-    height: 720px;
+    height: 100%;
     background-color: var(--gunmetal);
     display: flex;
     flex-direction: column;
