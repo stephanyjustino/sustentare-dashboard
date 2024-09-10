@@ -2,7 +2,7 @@ button{
     background-color: var(--carvao);
     border: var(--borda-branca);
     border-radius: 8px;
-    height: 55px;
+    height: 44px;
     width: 190px;
     color: var(--white);
     box-shadow: var(--sombra-ex-vermelha);

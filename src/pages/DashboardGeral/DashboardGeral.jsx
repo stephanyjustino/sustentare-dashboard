@@ -46,7 +46,7 @@ const Dashboard = () => {
                             datasets={datasets}
                             title="Entrada e Saída"
                             width="49%"
-                            height="250px"
+                            height="90%"
                             backgroundColor="#f0f0f0"
                         />
                         <ChartBar
@@ -54,7 +54,7 @@ const Dashboard = () => {
                             datasets={datasets}
                             title="Entrada e Saída"
                             width="49%"
-                            height="250px"
+                            height="90%"
                             backgroundColor="#f0f0f0"
                         />
                     </div>
