@@ -77,10 +77,10 @@ const Dashboard = () => {
                     <FontAwesomeIcon icon="fa-solid fa-bell" />
                 </div>
                 <div className={styles.DivKpis}>
-                    <Kpi status="bom"/>
-                    <Kpi />
-                    <Kpi status="ruim"/>
-                    <Kpi status="bom"/>
+                    <Kpi status="bom" name ="Produtos com baixo estoque" value ="348"/>
+                    <Kpi name="Produtos próximos de vencer" value="KG" value="348"/>
+                    <Kpi status="ruim" name="Produtos vencidos ou descartados" unit="R$" value="348,00"/>
+                    <Kpi status="bom" name="Compras não planejadas." value="6" />
                     
                 </div>
             </div>

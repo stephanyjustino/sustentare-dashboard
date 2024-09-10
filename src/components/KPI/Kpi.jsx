@@ -4,7 +4,7 @@ function CreateKpi({
   onClick = null,
   name = "Nome do KPI",
   value = "215",
-  unit = "Kg",
+  unit = "",
   status = "medio",
   icon = null,
   optionalDescrition = ""
