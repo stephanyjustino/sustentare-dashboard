@@ -1,0 +1,62 @@
+.group{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    gap:4%;  
+}
+.titulo{
+    font-size: 1.4em;
+}
+.Global{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.NavTop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 1000px;
+    height: 10vh;
+    padding: auto;
+}   
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+}
+.Charts{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 980px;
+    height: 55%;
+}
+
+.SideMenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20vw;
+    height: 100%;
+}
+.icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    height: 10%;
+    margin-left: 45%;
+}
+.DivKpis{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}

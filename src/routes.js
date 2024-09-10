@@ -13,8 +13,8 @@ function Rotas() {
                 <Routes>
                     <Route path="/" element={<Login />} />
                     <Route path={"/login"} element={<Login />} />
-                    <Route path={"/dashboard-geral"} element={<DashboardGeral />} />
-                    <Route path={"/dashboard-colaboradores"} element={<DashboardColaboradores />} />
+                    <Route path={"/dashboardGeral"} element={<DashboardGeral />} />
+                    <Route path={"/DashboardColaboradores"} element={<DashboardColaboradores />} />
                     <Route path="/test" element={<Teste/>}/>
                 </Routes>
             </BrowserRouter>

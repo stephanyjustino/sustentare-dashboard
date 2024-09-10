@@ -7,7 +7,7 @@ function CreateKpi({
   unit = "Kg",
   status = "medio",
   icon = null,
-  optionalDescrition = "Valor: R$ 523,00"
+  optionalDescrition = ""
 }) {
   return (
     <div className={`${stylesKpi.kpi} ${stylesKpi[status]}`} onClick={onClick}>

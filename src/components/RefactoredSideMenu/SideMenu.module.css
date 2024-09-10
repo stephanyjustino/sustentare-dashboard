@@ -1,15 +1,16 @@
 .SideMenu {
     width: 64px;
-    height: 720px;
+    height: 100%;
     background-color: var(--gunmetal);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    border-right: 1px solid var(--branco);
-    box-shadow: 0 0 8px var(--vermelho);
+    border-right: 1px solid var(--white);
+    box-shadow: 0 0 10px var(--vermelho);
     border-radius: 0px;
+    margin-right: 25px;
 }
 
 .group {
