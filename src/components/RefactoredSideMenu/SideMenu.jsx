@@ -13,7 +13,9 @@ export default function RefactoredSideMenu({ iconHome, iconEmployees, exit }) {
           <FontAwesomeIcon icon={iconEmployees} className={styles.icon} />
         </a>
       </div>
-      <FontAwesomeIcon icon={exit} className={styles.icon} />
+      <a href="/login">
+        <FontAwesomeIcon icon={exit} className={styles.icon} />
+      </a>
     </div>
   );
 }
