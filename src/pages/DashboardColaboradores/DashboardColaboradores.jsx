@@ -12,7 +12,7 @@ const DashboardColaboradores = () => {
 
     const datasets = [
         {
-            label: 'Saídas',
+            label: 'Entradas',
             data: [12, 5, 8, 12, 30, 25, 40, 8, 5],
             backgroundColor: 'rgba(54, 162, 235, 0.6)', // Cor das barras
             borderColor: 'rgba(54, 162, 235, 1)', // Cor da borda das barras
@@ -45,6 +45,42 @@ const DashboardColaboradores = () => {
                             iconTime={"clock-rotate-left"} 
                             valueTime={"Um mês atrás"}
                         />
+                        <ExpandedOperationLog
+                            imageAddress={"https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=600"}
+                            descImage={"Imagem do usuário"} 
+                            name={"Manuel"} 
+                            iconInput={"circle-info"} 
+                            valueInput={"Entrada: 25 Kg de carne"} 
+                            iconTime={"clock-rotate-left"} 
+                            valueTime={"Um mês atrás"}
+                        />
+                        <ExpandedOperationLog
+                            imageAddress={"https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=600"}
+                            descImage={"Imagem do usuário"} 
+                            name={"Manuel"} 
+                            iconInput={"circle-info"} 
+                            valueInput={"Entrada: 25 Kg de carne"} 
+                            iconTime={"clock-rotate-left"} 
+                            valueTime={"Um mês atrás"}
+                        />
+                        <ExpandedOperationLog
+                            imageAddress={"https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=600"}
+                            descImage={"Imagem do usuário"} 
+                            name={"Luiza"} 
+                            iconInput={"circle-info"} 
+                            valueInput={"Entrada: 25 Kg de carne"} 
+                            iconTime={"clock-rotate-left"} 
+                            valueTime={"Um mês atrás"}
+                        />
+                        <ExpandedOperationLog
+                            imageAddress={"https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=600"}
+                            descImage={"Imagem do usuário"} 
+                            name={"Sofia"} 
+                            iconInput={"circle-info"} 
+                            valueInput={"Entrada: 25 Kg de carne"} 
+                            iconTime={"clock-rotate-left"} 
+                            valueTime={"Um mês atrás"}
+                        />
                     </div>
                     <ChartBar
                         labels={labels}
@@ -65,10 +101,9 @@ const DashboardColaboradores = () => {
                     <FontAwesomeIcon icon="fa-solid fa-bell" />
                 </div>
                 <div className={styles.DivKpis}>
-                    <Kpi status="bom" />
-                    <Kpi />
-                    <Kpi status="ruim" />
-                    <Kpi status="bom" />
+                <Kpi status="bom" name ="Colaborador com mais entradas" value ="Manuel"/>
+                    <Kpi name="Total de entradas" value="145"/>
+                    <Kpi status="ruim" name="Total de Saídas" value="129"/>
 
                 </div>
             </div>
