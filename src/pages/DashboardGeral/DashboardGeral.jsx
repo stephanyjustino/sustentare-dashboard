@@ -44,8 +44,8 @@ const Dashboard = () => {
                         labels={labels_categorias}
                         datasets={datasets_categorias}
                         title="Compra de Produtos por Categoria"
-                        width="98%"
-                        height="320px"
+                        width="100%"
+                        height="40%"
                         backgroundColor="#f0f0f0"
                         margin="auto"
                         alignItems="center"
