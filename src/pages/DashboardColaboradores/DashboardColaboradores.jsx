@@ -38,47 +38,11 @@ const DashboardColaboradores = () => {
                     <div className={styles.list}>
                         <ExpandedOperationLog
                             imageAddress={"https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=600"}
-                            descImage={"Imagem do usuário"} 
-                            name={"Carol"} 
-                            iconInput={"circle-info"} 
-                            valueInput={"Entrada: 25 Kg de carne"} 
-                            iconTime={"clock-rotate-left"} 
-                            valueTime={"Um mês atrás"}
-                        />
-                        <ExpandedOperationLog
-                            imageAddress={"https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=600"}
-                            descImage={"Imagem do usuário"} 
-                            name={"Manuel"} 
-                            iconInput={"circle-info"} 
-                            valueInput={"Entrada: 25 Kg de carne"} 
-                            iconTime={"clock-rotate-left"} 
-                            valueTime={"Um mês atrás"}
-                        />
-                        <ExpandedOperationLog
-                            imageAddress={"https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=600"}
-                            descImage={"Imagem do usuário"} 
-                            name={"Manuel"} 
-                            iconInput={"circle-info"} 
-                            valueInput={"Entrada: 25 Kg de carne"} 
-                            iconTime={"clock-rotate-left"} 
-                            valueTime={"Um mês atrás"}
-                        />
-                        <ExpandedOperationLog
-                            imageAddress={"https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=600"}
-                            descImage={"Imagem do usuário"} 
-                            name={"Luiza"} 
-                            iconInput={"circle-info"} 
-                            valueInput={"Entrada: 25 Kg de carne"} 
-                            iconTime={"clock-rotate-left"} 
-                            valueTime={"Um mês atrás"}
-                        />
-                        <ExpandedOperationLog
-                            imageAddress={"https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=600"}
-                            descImage={"Imagem do usuário"} 
-                            name={"Sofia"} 
-                            iconInput={"circle-info"} 
-                            valueInput={"Entrada: 25 Kg de carne"} 
-                            iconTime={"clock-rotate-left"} 
+                            descImage={"Imagem do usuário"}
+                            name={"Carol"}
+                            iconInput={"circle-info"}
+                            valueInput={"Entrada: 25 Kg de carne"}
+                            iconTime={"clock-rotate-left"}
                             valueTime={"Um mês atrás"}
                         />
                     </div>
@@ -87,7 +51,7 @@ const DashboardColaboradores = () => {
                         datasets={datasets}
                         title="Entrada"
                         width="98%"
-                        height="340px"
+                        height="42%"
                         backgroundColor="#f0f0f0"
                         margin="auto"
                         alignItems="center"
@@ -101,9 +65,11 @@ const DashboardColaboradores = () => {
                     <FontAwesomeIcon icon="fa-solid fa-bell" />
                 </div>
                 <div className={styles.DivKpis}>
-                <Kpi status="bom" name ="Colaborador com mais entradas" value ="Manuel"/>
-                    <Kpi name="Total de entradas" value="145"/>
-                    <Kpi status="ruim" name="Total de Saídas" value="129"/>
+                    <Kpi status="bom" name="Colaborador com mais entradas" value="Manuel" />
+                    <Kpi name="Total de entradas" value="145" />
+                    <Kpi status="ruim" name="Total de Saídas" value="129" />
+                    <Kpi status="bom" name="Colaborador com mais entradas" value="Manuel" />
+
 
                 </div>
             </div>

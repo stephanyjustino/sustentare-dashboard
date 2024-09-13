@@ -17,7 +17,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 1010px;
+    width: 70vw;
     height: 10vh;
     padding: auto;
 }   
@@ -33,19 +33,18 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 980px;
+    width: 70vw;
     height: 87%;
 }
 .list{
     width: 98%;
-    height: 300px;
+    height: 48vh;
     background-color: var(--white);
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     border: 1px solid var(--white);
-    margin-bottom: 1%;
     overflow: hidden;
 }
 .SideMenu{
