@@ -6,15 +6,11 @@ import styles from './dashboardGeral.module.css';
 import ChartBar from "../../components/Chart/ChartBar"
 import Kpi from "../../components/KPI/Kpi";
 import CheckableList from "../../components/CheckableList/CheckableList";
+import {carregarListasChecaveis} from "./backend";
 
 const Dashboard = () => {
-    const MOCK_CATEGORIAS = [
-        "Ingrediente de self-service", "Frente de caixa", "Doces por encomenda", "Produtos de limpeza"
-    ]
-    const MOCK_PRODUTOS = [
-        "Feijão carioquinha", "Arroz", "Detergente", "Papel higiênico", "Maçã", "Coca Zero 300", "Garrafa d'água",
-        "Peito de frango", "Guaraná Jesus 300"
-    ]
+    let [categorias, setCategorias] = useState([])
+    let [produtos, setProdutos] = useState([])
 
     /* Realiza animação do ícone e atualiza o texto do hoŕario da última atualização. */
     const [lastUpdateText, setUpdateText] = useState("")
@@ -22,6 +18,11 @@ const Dashboard = () => {
     function atualizarDados(){
         setUpdateText("atualizando...")
         setLoadingClass(styles.loading)
+
+        /* Buscando dados das listas checáveis */
+        let dadosListas = carregarListasChecaveis()
+        setCategorias(dadosListas["categorias"])
+        setProdutos(dadosListas["produtos"])
 
         setTimeout(()=>{
             let agora =  new Date()
@@ -34,7 +35,6 @@ const Dashboard = () => {
     useEffect(() => atualizarDados, []); /*Executar 1 vez, no carregamento*/
     setInterval(atualizarDados, 30000) /*Executar à cada 30 seg*/
 
-
     return (
         <div className={styles.group}>
             <Navbar iconHome={"house"} iconEmployees={"users"} exit={"arrow-right-from-bracket"} />
@@ -44,8 +44,8 @@ const Dashboard = () => {
                     <div className={styles.buttons}>
                         {/*<Button insideText={"Categoria"} icon={"chevron-down"} />*/}
                         {/*<Button insideText={"Produto"} icon={"chevron-down"} />*/}
-                        <CheckableList textoBase={"Categorias"} opcoes={MOCK_CATEGORIAS}/>
-                        <CheckableList textoBase={"Produtos"} opcoes={MOCK_PRODUTOS}/>
+                        <CheckableList textoBase={"Categorias"} opcoes={categorias}/>
+                        <CheckableList textoBase={"Produtos"} opcoes={produtos}/>
                         <Button insideText={"Alterar período"} />
                     </div>
                 </div>
