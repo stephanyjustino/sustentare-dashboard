@@ -6,6 +6,7 @@ import styles from './dashboardColaboradores.module.css';
 import ChartBar from "../../components/Chart/ChartBar"
 import Kpi from "../../components/KPI/Kpi";
 import ExpandedOperationLog from "../../components/ExpandedOperationLog/ExpandedOperationLog"
+import CheckableList from "../../components/CheckableList/CheckableList";
 
 const DashboardColaboradores = () => {
     const labels = ['Sofia', 'Flávio', 'Carlos', 'Luiza', 'Marcos', 'Rafael', 'Manuel', 'Diego', 'Clara'];
@@ -29,8 +30,7 @@ const DashboardColaboradores = () => {
                 <div className={styles.NavTop}>
                     <span className={styles.titulo}>Painel dos colaboradores</span>
                     <div className={styles.buttons}>
-                        <Button insideText={"Nome"} icon={"chevron-down"} />
-                        <Button insideText={"Função"} icon={"chevron-down"} />
+                        <CheckableList textoBase={"Nome"} opcoes={labels}/>
                         <Button insideText={"Período"} icon={"chevron-down"} />
                     </div>
                 </div>

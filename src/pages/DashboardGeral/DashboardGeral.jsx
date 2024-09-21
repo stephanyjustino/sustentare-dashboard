@@ -5,8 +5,17 @@ import Button from "../../components/Button/Button"
 import styles from './dashboardGeral.module.css';
 import ChartBar from "../../components/Chart/ChartBar"
 import Kpi from "../../components/KPI/Kpi";
+import CheckableList from "../../components/CheckableList/CheckableList";
 
 const Dashboard = () => {
+    const MOCK_CATEGORIAS = [
+        "Ingrediente de self-service", "Frente de caixa", "Doces por encomenda", "Produtos de limpeza"
+    ]
+    const MOCK_PRODUTOS = [
+        "Feijão carioquinha", "Arroz", "Detergente", "Papel higiênico", "Maçã", "Coca Zero 300", "Garrafa d'água",
+        "Peito de frango", "Guaraná Jesus 300"
+    ]
+
     const [inputValue, setInputValue] = useState('');
 
     return (
@@ -16,8 +25,10 @@ const Dashboard = () => {
                 <div className={styles.NavTop}>
                     <span className={styles.titulo}>Painel de controle geral</span>
                     <div className={styles.buttons}>
-                        <Button insideText={"Categoria"} icon={"chevron-down"} />
-                        <Button insideText={"Produto"} icon={"chevron-down"} />
+                        {/*<Button insideText={"Categoria"} icon={"chevron-down"} />*/}
+                        {/*<Button insideText={"Produto"} icon={"chevron-down"} />*/}
+                        <CheckableList textoBase={"Categorias"} opcoes={MOCK_CATEGORIAS}/>
+                        <CheckableList textoBase={"Produtos"} opcoes={MOCK_PRODUTOS}/>
                         <Button insideText={"Alterar período"} />
                     </div>
                 </div>
