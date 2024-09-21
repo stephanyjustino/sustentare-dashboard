@@ -20,6 +20,7 @@ o selecionado ou as opções. */
     box-shadow: var(--sombra-in-escura);
     background: var(--gunmetal);
     padding: 8px;
+    flex-shrink: 0;
 }
 .checkableList > span, .opcoes > span{
     display: flex;
@@ -55,7 +56,6 @@ o selecionado ou as opções. */
     border: var(--borda-cinza);
     box-shadow: var(--sombra-vermelha);
     padding: 0 16px;
-    flex-shrink: 0;
 }
 
 .opcoes p{
