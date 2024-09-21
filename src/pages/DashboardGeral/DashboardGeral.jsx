@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Navbar from "../../components/RefactoredSideMenu/SideMenu";
 import Button from "../../components/Button/Button"
@@ -6,17 +6,34 @@ import styles from './dashboardGeral.module.css';
 import ChartBar from "../../components/Chart/ChartBar"
 import Kpi from "../../components/KPI/Kpi";
 import CheckableList from "../../components/CheckableList/CheckableList";
+import {carregarListasChecaveis} from "./backend";
 
 const Dashboard = () => {
-    const MOCK_CATEGORIAS = [
-        "Ingrediente de self-service", "Frente de caixa", "Doces por encomenda", "Produtos de limpeza"
-    ]
-    const MOCK_PRODUTOS = [
-        "Feijão carioquinha", "Arroz", "Detergente", "Papel higiênico", "Maçã", "Coca Zero 300", "Garrafa d'água",
-        "Peito de frango", "Guaraná Jesus 300"
-    ]
+    let [categorias, setCategorias] = useState([])
+    let [produtos, setProdutos] = useState([])
 
-    const [inputValue, setInputValue] = useState('');
+    /* Realiza animação do ícone e atualiza o texto do hoŕario da última atualização. */
+    const [lastUpdateText, setUpdateText] = useState("")
+    const [loadingClass, setLoadingClass] = useState(null)
+    function atualizarDados(){
+        setUpdateText("atualizando...")
+        setLoadingClass(styles.loading)
+
+        /* Buscando dados das listas checáveis */
+        let dadosListas = carregarListasChecaveis()
+        setCategorias(dadosListas["categorias"])
+        setProdutos(dadosListas["produtos"])
+
+        setTimeout(()=>{
+            let agora =  new Date()
+            let horarioFormat = `${agora.getHours()}:${agora.getMinutes()}`
+
+            setUpdateText(`atualizado pela última vez às ${horarioFormat}`)
+            setLoadingClass(null)
+        }, 1500)
+    }
+    useEffect(() => atualizarDados, []); /*Executar 1 vez, no carregamento*/
+    setInterval(atualizarDados, 30000) /*Executar à cada 30 seg*/
 
     return (
         <div className={styles.group}>
@@ -27,8 +44,8 @@ const Dashboard = () => {
                     <div className={styles.buttons}>
                         {/*<Button insideText={"Categoria"} icon={"chevron-down"} />*/}
                         {/*<Button insideText={"Produto"} icon={"chevron-down"} />*/}
-                        <CheckableList textoBase={"Categorias"} opcoes={MOCK_CATEGORIAS}/>
-                        <CheckableList textoBase={"Produtos"} opcoes={MOCK_PRODUTOS}/>
+                        <CheckableList textoBase={"Categorias"} opcoes={categorias}/>
+                        <CheckableList textoBase={"Produtos"} opcoes={produtos}/>
                         <Button insideText={"Alterar período"} />
                     </div>
                 </div>
@@ -64,10 +81,13 @@ const Dashboard = () => {
                 </div>
             </div>
             <div className={styles.SideMenu}>
-                <div className={styles.icons}>
-                    <FontAwesomeIcon icon="moon" />
-                    <FontAwesomeIcon icon="fa-solid fa-gear" />
-                    <FontAwesomeIcon icon="fa-solid fa-bell" />
+                <div onClick={()=>atualizarDados()} className={styles.updateInfo + " " + loadingClass}>
+                    <p>Dados em tempo real.</p>
+                    <span>
+                        <FontAwesomeIcon icon={"clock-rotate-left"} className={styles.staticIcon}/>
+                        <FontAwesomeIcon icon={"rotate"} className={styles.loadingIcon}/>
+                        <p>{lastUpdateText}</p>
+                    </span>
                 </div>
                 <div className={styles.DivKpis}>
                     <Kpi status="bom" name ="Produtos com baixo estoque" value ="5"/>

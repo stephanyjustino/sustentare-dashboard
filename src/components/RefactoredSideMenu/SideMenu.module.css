@@ -25,5 +25,5 @@
 .icon {
     width: 30px;
     height: 30px;
-    color: var(--branco) !important;
+    filter: var(--sombra-vermelha-icone);
 }
