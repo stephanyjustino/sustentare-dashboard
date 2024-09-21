@@ -19,8 +19,7 @@
     align-items: center;
     width: 70vw;
     height: 10vh;
-    padding: auto;
-}   
+}
 .buttons{
     display: flex;
     flex-direction: row;
