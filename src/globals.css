@@ -17,7 +17,7 @@ alterando-o apenas aqui, assim como com as variáveis do Figma!!!
     --preto: #0A0908;
     --gunmetal: #22333B;
     --carvao: #254A5B;
-    --cinza-transparente: #C9C9C9;
+    --cinza-transparente: rgba(201, 201, 201, 0.65);
     --vermelho: #CC334E;
     --azul-claro: #65B5DA;
     --green:#2DD36F;
@@ -34,6 +34,7 @@ alterando-o apenas aqui, assim como com as variáveis do Figma!!!
     --borda-branca:  1px solid var(--white);
     --borda-grossa-branca:  2px solid var(--white);
     --borda-fina-branca: 0.5px 8px solid var(--white);
+    --borda-cinza:  0.5px solid var(--cinza-transparente);
 
     /*  Sombras */
     /* IN = Interna; EX = Com espaçamento adicional, para acomodar bordas*/

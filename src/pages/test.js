@@ -1,20 +1,11 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Navbar from "../components/RefactoredSideMenu/SideMenu";
-import Log from "../components/ExpandedOperationLog/ExpandedOperationLog"
-import Kpi from "../components/KPI/Kpi";
+import CheckableList from "../components/CheckableList/CheckableList";
 
-const ItemDoMenu = () => {
-    const [inputValue, setInputValue] = useState('');
+export default function Teste (){
 
     return (
-        <div>
-            <Kpi/>
+        <div style={{width: '300px'}}>
+            <CheckableList/>
         </div>
     );
 
 }
-
-export default ItemDoMenu;
-
-// <Navbar iconHome={"house"} iconEmployees={"users"} exit={"arrow-right-from-bracket"}/>

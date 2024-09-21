@@ -1,0 +1,90 @@
+.checkableList {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    border-radius: 8px;
+    > span {
+        border-radius: inherit;
+        border: var(--borda-branca);
+    }
+}
+/* Quando expande, retira border radius de baixo. */
+.expandido{
+    border-radius: 8px 8px 0 0;
+}
+
+/* Define propriedades comuns para todos os spans, sejam eles
+o selecionado ou as opções. */
+.checkableList span{
+    cursor: pointer;
+    box-shadow: var(--sombra-in-escura);
+    background: var(--gunmetal);
+    padding: 8px;
+    flex-shrink: 0;
+}
+.checkableList > span, .opcoes > span{
+    display: flex;
+    height: 47px;
+}
+.checkableList > span{
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Aplica display none, a menos que a classe expandido esteja ativa*/
+.opcoes{
+    display: none;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+.expandido > .opcoes{
+    position: absolute;
+    top: 47px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Borda e sombra para as opções*/
+.opcoes > span{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border: var(--borda-cinza);
+    box-shadow: var(--sombra-vermelha);
+    padding: 0 16px;
+}
+
+.opcoes p{
+    width: 100%;
+    max-width: 200px;
+    font-size: 0.8em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Define que tanto o contâiner de opções quanto seu último item tem
+border-radius nas bordas de baixo. */
+.opcoes, .opcoes > span:last-child{
+    border-radius: 0 0 8px 8px;
+}
+
+.checkbox{
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border: var(--borda-branca);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkbox > svg{
+    display: none;
+}
+.selecionado > svg{
+    display: block;
+}
