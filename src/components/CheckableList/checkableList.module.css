@@ -20,6 +20,8 @@ o selecionado ou as opções. */
     box-shadow: var(--sombra-in-escura);
     background: var(--gunmetal);
     padding: 8px;
+}
+.checkableList > span, .opcoes > span{
     height: 47px;
 }
 
@@ -27,19 +29,40 @@ o selecionado ou as opções. */
 .opcoes{
     display: none;
 }
-.expandido > .opcoes, .expandido > .opcoes > span{
+.expandido > .opcoes{
     display: flex;
     flex-direction: column;
 }
 
 /* Borda e sombra para as opções*/
 .opcoes > span{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     border: var(--borda-cinza);
     box-shadow: var(--sombra-vermelha);
+    padding: 0 16px;
 }
 
 /* Define que tanto o contâiner de opções quanto seu último item tem
 border-radius nas bordas de baixo. */
 .opcoes, .opcoes > span:last-child{
     border-radius: 0 0 8px 8px;
+}
+
+.checkbox{
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border: var(--borda-branca);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkbox > svg{
+    display: none;
+}
+.selecionado > svg{
+    display: block;
 }

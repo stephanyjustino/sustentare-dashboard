@@ -1,31 +1,50 @@
 import styles from './checkableList.module.css';
-import {useState} from "react";
+import {useRef, useState} from "react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-export default function CheckableList({opcoes}) {
-    const TEXTO_GUIA = "Selecione uma opção"
+export default function CheckableList({textoBase = "Selecione opções", opcoes = ["Opções", "de", "teste"]}) {
+    // Convertendo a lista de opções (strings) enviadas em uma lista de dicts, com uma chave com
+    // o nome do dict e outra informando se essa opção está selecionada ou não.
+    opcoes = opcoes.map((o)=>({"nome": o, "selecionado": false}))
 
-    const [expandido, setExpandido] = useState(false);
+    // Hook de referência. Recebe um dict, onde cada chave será um valor da lista de opções.
+    const ref = useRef({})
+
+    // useState e variável de classe dinâmica para controlar a abertura ou não do menu.
+    const [expandido, setExpandido] = useState(true);
     let classeExpandido = expandido ? styles.expandido : ""
 
-    const [selecionado, setSelecionado] = useState(TEXTO_GUIA)
-    function abrirMenu(){
-        setSelecionado(TEXTO_GUIA)
-        setExpandido(true)
-    }
     function selecionarOpcao(o){
-        setSelecionado(o)
-        setExpandido(false)
-    }
+        let checkbox = ref.current[o].children[0]
+        checkbox.classList.toggle(styles.selecionado);
 
-    opcoes = ["Alê", "Juliana", "Antônio"]
+        for (let i in opcoes){
+            if (opcoes[i].nome === o){
+                opcoes[i].selecionado = !opcoes[i].selecionado
+                break
+            }
+        }
+    }
 
     return(
         <div className={styles.checkableList + " " + classeExpandido}>
-            <span onClick={()=>abrirMenu()}>{selecionado}</span>
+            <span onClick={()=>setExpandido(!expandido)}>{textoBase}</span>
             <div className={styles.opcoes}>
+                {/*Mapeamos um span para cada opção informada*/}
                 {opcoes.map((o) =>{
+                    // Apesar de termos transformado as opções enviadas (lista de strings) em
+                    // uma lista de dicts, na criação do elemento apenas o nome é relevante.
+                    o = o.nome
                     return (
-                        <span key={o} onClick={()=>selecionarOpcao(o)}>
+                        <span
+                            key={o}
+                            onClick={()=>selecionarOpcao(o)}
+                            // Cria no hook de ref um valor para o elemento criando, identificado
+                            // por uma chave que é seu nome.
+                            ref={e=>ref.current[o] = e}>
+                            <span className={styles.checkbox}>
+                                <FontAwesomeIcon icon={"check"}/>
+                            </span>
                             {o}
                         </span>
                     )
