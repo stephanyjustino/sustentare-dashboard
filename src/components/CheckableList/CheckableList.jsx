@@ -11,7 +11,7 @@ export default function CheckableList({textoBase = "Selecione opções", opcoes 
     const ref = useRef({})
 
     // useState e variável de classe dinâmica para controlar a abertura ou não do menu.
-    const [expandido, setExpandido] = useState(true);
+    const [expandido, setExpandido] = useState(false);
     let classeExpandido = expandido ? styles.expandido : ""
 
     function selecionarOpcao(o){
@@ -28,7 +28,10 @@ export default function CheckableList({textoBase = "Selecione opções", opcoes 
 
     return(
         <div className={styles.checkableList + " " + classeExpandido}>
-            <span onClick={()=>setExpandido(!expandido)}>{textoBase}</span>
+            <span onClick={()=>setExpandido(!expandido)}>
+                {textoBase}
+                <FontAwesomeIcon icon={"chevron-down"}/>
+            </span>
             <div className={styles.opcoes}>
                 {/*Mapeamos um span para cada opção informada*/}
                 {opcoes.map((o) =>{
@@ -45,7 +48,7 @@ export default function CheckableList({textoBase = "Selecione opções", opcoes 
                             <span className={styles.checkbox}>
                                 <FontAwesomeIcon icon={"check"}/>
                             </span>
-                            {o}
+                            <p>{o}</p>
                         </span>
                     )
                 })}

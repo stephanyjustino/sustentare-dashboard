@@ -1,7 +1,7 @@
 .checkableList {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: fit-content;
     border-radius: 8px;
     > span {
         border-radius: inherit;
@@ -22,27 +22,49 @@ o selecionado ou as opções. */
     padding: 8px;
 }
 .checkableList > span, .opcoes > span{
+    display: flex;
     height: 47px;
+}
+.checkableList > span{
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
 }
 
 /* Aplica display none, a menos que a classe expandido esteja ativa*/
 .opcoes{
     display: none;
+    max-height: 300px;
+    overflow-y: scroll;
 }
 .expandido > .opcoes{
+    position: absolute;
+    top: 47px;
     display: flex;
     flex-direction: column;
 }
 
 /* Borda e sombra para as opções*/
 .opcoes > span{
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    gap: 8px;
     border: var(--borda-cinza);
     box-shadow: var(--sombra-vermelha);
     padding: 0 16px;
+    flex-shrink: 0;
+}
+
+.opcoes p{
+    width: 100%;
+    max-width: 200px;
+    font-size: 0.8em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 /* Define que tanto o contâiner de opções quanto seu último item tem
