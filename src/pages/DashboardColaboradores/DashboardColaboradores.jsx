@@ -14,12 +14,18 @@ const DashboardColaboradores = () => {
         {
             label: 'Entradas',
             data: [12, 5, 8, 12, 30, 25, 40, 8, 5],
-            backgroundColor: 'rgba(54, 162, 235, 0.6)', // Cor das barras
+            backgroundColor: 'rgba(54, 162, 235, 0.6)', // Cor das barras das entradas
             borderColor: 'rgba(54, 162, 235, 1)', // Cor da borda das barras
             borderWidth: 1,
         },
+        {
+            label: 'Saídas',
+            data: [8, 7, 5, 10, 20, 15, 35, 12, 4],
+            backgroundColor: 'rgba(255, 99, 132, 0.6)', // Cor das barras das saídas
+            borderColor: 'rgba(255, 99, 132, 1)', // Cor da borda das barras
+            borderWidth: 1,
+        },
     ];
-
     const [inputValue, setInputValue] = useState('');
 
     return (
