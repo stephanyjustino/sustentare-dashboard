@@ -5,7 +5,7 @@ import React, { useState } from "react"; // Importa React e o hook useState para
 import Button from "../../components/Button/Button";
 import TextInput from "../../components/TextInput/TextInput";
 import api from "../../api";
-import { errorToast, successToast } from "../../components/Toast/Toast";    
+import { errorToast, successToast, alertToast} from "../../components/Toast/Toast";    
 /* import RedirectionList from "../../../components/RedirectionList/RedirectionList"
 import MainMenu from "../MainMenu/MainMenu" */
 
@@ -44,8 +44,8 @@ const Login = () => {
     )
 
     const finalizar = () => {
-        successToast("Login realizado com sucesso!");
-       // setTimeout(() => navigate("/dashboardGeral"), 2000);
+        alertToast("Login realizado com sucesso!");
+        setTimeout(() => navigate("/dashboardGeral"), 2000);
     }
 
     return (

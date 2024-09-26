@@ -9,7 +9,7 @@
     font-size: 1.3em;
 }
 
-.success > span, .alert > span {
+.success > span path, .alert > span {
     color: var(--gunmetal);
 }
 
